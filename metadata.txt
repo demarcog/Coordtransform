@@ -15,7 +15,6 @@ tags=coordinate,point,crs,EPSG,PROJ4,reference system,transformation
 class_name=Coordtransform
 tracker=https://github.com/demarcog/Coordtransform/issues
 repository=https://github.com/demarcog/Coordtransform
-website=www.d2gis.com
-[author]
-name=Giuseppe De Marco
+homepage=www.d2gis.com
+author=Giuseppe De Marco
 email=demarco.giuseppe@gmail.com
