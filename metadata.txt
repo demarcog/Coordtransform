@@ -10,11 +10,7 @@ name=Coordtransform
 description=transform x,y input coordinate to whatever new reference system 
 version=1.0
 qgisMinimumVersion=2.0
-about=This plugin let the user transform x,y input coordinate to 
-whatever new reference system using 
-EPSG code number and even USER DEFINED crs.
-It also displays proj4 crs definition strings for the input and output crs
-along with the new x,y coordinate. 
+about=This plugin let the user transform x,y input coordinate to whatever new reference system using EPSG code number and even USER DEFINED crs. It also displays proj4 crs definition strings for the input and output crs along with the new x,y coordinate. This plugin let the user take advantage of QgsCoordinateReferenceSystem Class functionalities and allows the user to have a conversion software like CartLab inside Qgis. It is very useful when dealing with georeferencing tasks to check one point coordinates in a different CRS or simply when the user would like to know a point's coordinates in a different CRS. It extends the functionalities of the custom CS dialog letting the user convert coordinates from whatever CRS to whatever CRS.
 tags=coordinate,point,crs,EPSG,PROJ4,reference system,transformation
 class_name=Coordtransform
 tracker=https://github.com/demarcog/Coordtransform/issues
