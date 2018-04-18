@@ -226,4 +226,3 @@ class Ui_Coordtransform(object):
         self.label_12.setText(_translate("Coordtransform", "Y"))
         self.label_13.setText(_translate("Coordtransform", "TRANSFORMED COORDINATES"))
 
-import resources_rc
