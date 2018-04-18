@@ -19,12 +19,12 @@
  ***************************************************************************/
 """
 
-from PyQt4 import QtCore, QtGui
-from ui_coordtransform import Ui_Coordtransform
+from qgis.PyQt import QtCore, QtGui,  QtWidgets
+from .ui_coordtransform import Ui_Coordtransform
 # create the dialog for zoom to point
-class CoordtransformDialog(QtGui.QDialog):
+class CoordtransformDialog(QtWidgets.QDialog):
     def __init__(self):
-        QtGui.QDialog.__init__(self)
+        QtWidgets.QDialog.__init__(self)
         # Set up the user interface from Designer.
         self.ui = Ui_Coordtransform()
         self.ui.setupUi(self)

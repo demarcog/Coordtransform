@@ -22,6 +22,12 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -38,6 +44,12 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLineEdit" name="Y">
    <property name="geometry">
@@ -47,6 +59,12 @@
      <width>113</width>
      <height>27</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="inputcrs">
@@ -58,6 +76,12 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QTextBrowser" name="results">
    <property name="geometry">
@@ -68,15 +92,27 @@
      <height>101</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>70</y>
-     <width>241</width>
+     <width>281</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>USAGE: Input x, y and epsg/user defined values</string>
@@ -91,6 +127,12 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -100,6 +142,12 @@
      <width>21</width>
      <height>17</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>X</string>
@@ -114,6 +162,12 @@
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Y</string>
    </property>
@@ -123,9 +177,15 @@
     <rect>
      <x>275</x>
      <y>90</y>
-     <width>101</width>
+     <width>111</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>INPUT EPSG/USER</string>
@@ -136,9 +196,16 @@
     <rect>
      <x>401</x>
      <y>90</y>
-     <width>111</width>
+     <width>121</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+     <italic>false</italic>
+    </font>
    </property>
    <property name="text">
     <string>OUTPUT EPSG/USER</string>
@@ -153,6 +220,12 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Transform</string>
    </property>
@@ -162,9 +235,15 @@
     <rect>
      <x>20</x>
      <y>330</y>
-     <width>51</width>
+     <width>61</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>RESULTS</string>
@@ -179,6 +258,13 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+     <italic>false</italic>
+    </font>
+   </property>
    <property name="text">
     <string>Clear</string>
    </property>
@@ -186,18 +272,27 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>240</x>
      <y>10</y>
-     <width>221</width>
+     <width>271</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="layoutDirection">
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
     <string>X,Y point coordtransform
- Copyright (C) 2017 Giuseppe De Marco
+ Copyright (C) 2018 Giuseppe De Marco
 www.d2gis.com</string>
    </property>
    <property name="textFormat">
@@ -241,9 +336,15 @@ www.d2gis.com</string>
     <rect>
      <x>10</x>
      <y>190</y>
-     <width>151</width>
+     <width>211</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>INPUT EPSG/USER To PROJ4</string>
@@ -254,9 +355,15 @@ www.d2gis.com</string>
     <rect>
      <x>10</x>
      <y>260</y>
-     <width>161</width>
+     <width>221</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>OUTPUT EPSG/USER To PROJ4</string>
@@ -271,6 +378,12 @@ www.d2gis.com</string>
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>X</string>
    </property>
@@ -284,6 +397,12 @@ www.d2gis.com</string>
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Y</string>
    </property>
@@ -291,11 +410,17 @@ www.d2gis.com</string>
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>60</x>
      <y>460</y>
-     <width>151</width>
-     <height>17</height>
+     <width>251</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>TRANSFORMED COORDINATES</string>
@@ -310,6 +435,12 @@ www.d2gis.com</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QTextBrowser" name="outputproj4">
    <property name="geometry">
@@ -319,6 +450,12 @@ www.d2gis.com</string>
      <width>501</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QTextBrowser" name="trfX">
@@ -330,6 +467,12 @@ www.d2gis.com</string>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QTextBrowser" name="trfY">
    <property name="geometry">
@@ -339,6 +482,12 @@ www.d2gis.com</string>
      <width>131</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>8</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

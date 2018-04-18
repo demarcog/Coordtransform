@@ -19,6 +19,7 @@
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
+from __future__ import absolute_import
 def name():
     return "Coordtransform"
 def description():
@@ -28,8 +29,8 @@ def version():
 def icon():
     return "icon.png"
 def qgisMinimumVersion():
-    return "2.0"
+    return "3.0"
 def classFactory(iface):
     # load Coordtransform class from file Coordtransform
-    from coordtransform import Coordtransform
+    from .coordtransform import Coordtransform
     return Coordtransform(iface)

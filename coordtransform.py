@@ -5,8 +5,8 @@
  transform input coordinate to whatever new refrence system using EPSG number
                               -------------------
         begin                : 2012-03-03
-        latest changes       : 2017-07-16
-        copyright            : (C) 2012-2017 by Giuseppe De Marco
+        latest changes       : 2018-04-17
+        copyright            : (C) 2012-2018 by Giuseppe De Marco
         email                : demarco.giuseppe@gmail.com
  ***************************************************************************/
 
@@ -19,18 +19,21 @@
  *                                                                         *
  ***************************************************************************/
 """
+from __future__ import absolute_import
+from builtins import str
+from builtins import object
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
 from qgis.core import *
-from qgis.gui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import *
 # Initialize Qt resources from file resources.py
-import resources
+from . import resources
 #import pdb
 # Import the code for the dialog
-from coordtransformdialog import CoordtransformDialog
+from .coordtransformdialog import CoordtransformDialog
 
-class Coordtransform:
+class Coordtransform(object):
 
     def __init__(self, iface):
         # Save reference to the QGIS interface
@@ -48,15 +51,15 @@ class Coordtransform:
         self.action = QAction(QIcon(":/plugins/coordtransform/icon.png"), \
             "Coordtransform", self.iface.mainWindow())
         # connect the action to the run method
-        QObject.connect(self.action, SIGNAL("triggered()"), self.run)
+        self.action.triggered.connect(self.run)
         
         # Add toolbar button and menu item
         self.iface.addToolBarIcon(self.action)
-        self.iface.addPluginToMenu("&Pienocampo", self.action)
+        self.iface.addPluginToMenu("&d2gis", self.action)
 
     def unload(self):
         # Remove the plugin menu item and icon
-        self.iface.removePluginMenu("&Pienocampo",self.action)
+        self.iface.removePluginMenu("&d2gis",self.action)
         self.iface.removeToolBarIcon(self.action)
         
 #custom functions begin------------------------------------------------------------
@@ -127,10 +130,11 @@ class Coordtransform:
         if (chkin == 1) and (chkout == 1) and (chkx == 1) and (chky == 1):
             x = self.dlg.ui.X.text()
             y = self.dlg.ui.Y.text()
-            input = self.dlg.ui.inputcrs.text()
-            output = self.dlg.ui.outputcrs.text()
-            crsSrc = QgsCoordinateReferenceSystem(int(input))
-            crsDest = QgsCoordinateReferenceSystem(int(output))
+            input = "EPSG:"+ self.dlg.ui.inputcrs.text()
+            output = "EPSG:"+self.dlg.ui.outputcrs.text()
+            context = QgsProject.instance()
+            crsSrc = QgsCoordinateReferenceSystem(input)
+            crsDest = QgsCoordinateReferenceSystem(output)
             if crsSrc.authid() == '':
                 source_crs = QgsCoordinateReferenceSystem()
                 source_crs.createFromId(int(input), QgsCoordinateReferenceSystem.InternalCrsId)
@@ -148,22 +152,22 @@ class Coordtransform:
                 else:
                     crsDest=dest_crs
             self.dlg.ui.results.setText("input CRS "+crsSrc.authid()+"\n"+"output CRS "+crsDest.authid())
-            self.dlg.ui.inputproj4.setText(unicode(crsSrc.toProj4()))
-            self.dlg.ui.outputproj4.setText(unicode(crsDest.toProj4()))
-            xform = QgsCoordinateTransform(crsSrc, crsDest)
-            transfpoint=xform.transform(QgsPoint(float(x),float(y)))
+            self.dlg.ui.inputproj4.setText(str(crsSrc.toProj4()))
+            self.dlg.ui.outputproj4.setText(str(crsDest.toProj4()))
+            xform = QgsCoordinateTransform(crsSrc, crsDest, context)
+            transfpoint=xform.transform(QgsPointXY(float(x),float(y)))
             self.dlg.ui.results.append("New coordinates:")
             self.dlg.ui.results.append(transfpoint.toString())
-            self.dlg.ui.trfX.setText(unicode(transfpoint.x()))
-            self.dlg.ui.trfY.setText(unicode(transfpoint.y()))
+            self.dlg.ui.trfX.setText(str(transfpoint.x()))
+            self.dlg.ui.trfY.setText(str(transfpoint.y()))
         else:
             return
 
     # run method that performs all the real work
     def run(self):
         #Buttons events
-        QObject.connect(self.dlg.ui.clear, SIGNAL("clicked(bool)"), self.clear)
-        QObject.connect(self.dlg.ui.transform, SIGNAL("clicked(bool)"), self.transform)
+        self.dlg.ui.clear.clicked.connect(self.clear)
+        self.dlg.ui.transform.clicked.connect(self.transform)
         
         self.dlg.show()
         result = self.dlg.exec_()
